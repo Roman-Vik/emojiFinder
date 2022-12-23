@@ -6,11 +6,10 @@ import {Task13} from "./task13/Task13";
 
 function App() {
     const [str, setStr] = React.useState({})
-        console.log(str)
     return (
         <>
             <Header/>
-            <Main/>
+            <Main str={str} />
             <Footer setStr={setStr} />
             <Task13/>
         </>
