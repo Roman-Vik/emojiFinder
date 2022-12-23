@@ -1,0 +1,39 @@
+.list__item {
+    height: 100%;
+    width: 316px;
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    background: #ffffff;
+}
+.list__name {
+    text-decoration: underline;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 17px;
+    line-height: 28px;
+    text-decoration-line: underline;
+    color: #000000;
+    font-style: normal;
+    margin: 18px 0 12px 0;
+}
+.list__text {
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+    text-align: center;
+    color: #3f444a;
+}
+.list__unicode {
+    font-family: 'Inter',sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 48px;
+    color: #68717a;
+}

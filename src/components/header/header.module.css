@@ -1,0 +1,22 @@
+.hWraper {
+    padding: 68px 0 140px 0;
+    text-align: center;
+    background: linear-gradient(92.33deg, #087990 0.12%, #055160 100%);
+    border: 1px solid #ced4da;
+}
+.hLine {
+    font-family: 'Inter',sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 72px;
+    line-height: 87px;
+    color: #cff4fc;
+}
+.hWraper__text {
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 21px;
+    line-height: 36px;
+    color: #cff4fc;
+}
