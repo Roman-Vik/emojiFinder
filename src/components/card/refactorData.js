@@ -1,4 +1,4 @@
-import {data} from "../../../../store/data";
+import {data} from "../../store/data";
 
 function refData (data){
     return data.map((el) => {
@@ -11,5 +11,4 @@ function refData (data){
         };
     });
 }
-
 export const newData =  (refData(data))

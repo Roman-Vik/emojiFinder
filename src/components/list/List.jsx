@@ -1,10 +1,12 @@
 import React from "react";
-import {Card} from "./card/Card";
+import {Card} from "../card/Card";
 import s from './list.module.css'
 import { v4 as id } from 'uuid';
-import {newData} from "./card/refactorData";
+import {newData} from "../card/refactorData";
 
 export function List ({input}){
+
+
 
     return (
         <section>
