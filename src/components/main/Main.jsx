@@ -6,7 +6,6 @@ import {useState} from "react";
 export function Main() {
 const [input, setInput] = useState('')
 
-
     return (
         <main>
             <Search setInput={setInput}/>

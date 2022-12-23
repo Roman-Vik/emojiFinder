@@ -1,0 +1,19 @@
+
+ul {
+    display: flex;
+    padding: 19px 0;
+}
+
+li {
+    padding: 12px 14px;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 16px;
+    color: #ABB5BE;
+    list-style-type: none;
+    background: #FFFFFF;
+    border: 1px solid #DEE2E6;
+    border-radius: 4px 0 0 4px;
+}

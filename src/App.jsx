@@ -5,11 +5,13 @@ import {Footer} from "./components/footer/Footer";
 import {Task13} from "./task13/Task13";
 
 function App() {
+    const [str, setStr] = React.useState(null)
+
     return (
         <>
             <Header/>
             <Main/>
-            <Footer/>
+            <Footer setStr={setStr} />
             <Task13/>
         </>
     );

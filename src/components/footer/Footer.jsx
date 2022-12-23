@@ -1,10 +1,16 @@
 import React from "react";
 import s from './footer.module.css'
+import {Select} from "../select/Select";
+import {Pages} from "../pages/Pages";
+export function Footer({setStr}) {
+    setStr(111)
 
-export function Footer() {
-    return(
+    return (
         <footer>
-            <p className={s.made}>2022 © Made with love by me</p>
+            <div className={s.container}>
+            <Pages/>
+                <Select/>
+            </div>
         </footer>
     )
 }
