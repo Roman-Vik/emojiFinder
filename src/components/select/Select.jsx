@@ -1,7 +1,8 @@
 import s from './select.module.css'
 import React from "react";
-export function Select() {
+export function Select({str, setStr}) {
     const [myValue, setMyValue] = React.useState("");
+    // console.log(str)
     return (
         <>
             <div className={s.select}>
@@ -11,7 +12,7 @@ export function Select() {
                     defaultValue={myValue}  className={s.select__pages}>
                     <option value="value1" selected>12</option>
                     <option value="value2">24</option>
-                    <option value="value3">36</option>
+                    <option value="value3">48</option>
                 </select>
             </div>
         </>

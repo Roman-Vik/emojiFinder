@@ -5,12 +5,12 @@ import {Footer} from "./components/footer/Footer";
 import {Task13} from "./task13/Task13";
 
 function App() {
-    const [str, setStr] = React.useState({})
+        const [str, setStr] = React.useState({pages: '1', first: 0, end: 12})
     return (
         <>
             <Header/>
             <Main str={str} />
-            <Footer setStr={setStr} />
+            <Footer str={str}  setStr={setStr} />
             <Task13/>
         </>
     );
