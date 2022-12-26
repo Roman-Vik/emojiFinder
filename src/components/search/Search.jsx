@@ -5,7 +5,6 @@ import s from './search.module.css'
 
 export function Search({setInput, input}) {
 
-
     return (
         <div className={s.search}>
             <form className='search__form' action="">
