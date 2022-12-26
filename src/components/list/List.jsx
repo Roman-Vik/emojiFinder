@@ -5,7 +5,6 @@ import { v4 as id } from 'uuid';
 import {newData} from "../card/refactorData";
 
 export function List ({str, input}){
-console.log(str)
     return (
         <section>
                 <div className={s.list}>
