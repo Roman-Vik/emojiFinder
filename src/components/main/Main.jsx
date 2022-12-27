@@ -1,10 +1,8 @@
 import React from "react";
 import {Search} from "../search/Search";
 import {List} from "../list/List";
-import {useState} from "react";
 
-export function Main({refData, amountItem, str}) {
-    const [input, setInput] = useState('')
+export function Main({ input, setInput, refData, amountItem, str}) {
     return (
         <main>
             <Search setInput={setInput}/>

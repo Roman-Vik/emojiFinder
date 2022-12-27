@@ -1,4 +1,5 @@
 import React from "react";
+import {useState} from "react";
 import {Header} from "./components/header/Header";
 import {Main} from "./components/main/Main";
 import {Footer} from "./components/footer/Footer";
@@ -6,11 +7,12 @@ import {data} from "./store/data";
 
 
 function App() {
+    const [input, setInput] = useState('')
     //select
-    const [amountItem, setAmountItem] = React.useState(12)
-    const [first, setFirst] = React.useState(0)
-    const [end, setEnd] = React.useState(amountItem)
-    const [str, setStr] = React.useState('1')
+    const [amountItem, setAmountItem] = useState(12)
+    const [firstPages, setFirstPages] = useState(0)
+    const [lastPages, setLastPages] = useState(amountItem)
+    const [str, setStr] = useState('1')
 
     function refData() {
         return data.map((el) => {
@@ -27,8 +29,8 @@ function App() {
     return (
         <>
             <Header/>
-            <Main refData={refData} amountItem={amountItem} first={first} end={end} str={str}/>
-            <Footer refData={refData} setFirst={setFirst} setEnd={setEnd} setStr={setStr} amountItem={amountItem}
+            <Main input={input} setInput={setInput} refData={refData} amountItem={amountItem} firstPages={firstPages} lastPages={lastPages} str={str}/>
+            <Footer refData={refData} setFirstPages={setFirstPages} setLastPages={setLastPages} setStr={setStr} amountItem={amountItem}
                     setAmountItem={setAmountItem}/>
         </>
     );
