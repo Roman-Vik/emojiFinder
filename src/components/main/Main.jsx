@@ -3,12 +3,12 @@ import {Search} from "../search/Search";
 import {List} from "../list/List";
 import {useState} from "react";
 
-export function Main({amountItem, str}) {
+export function Main({refData, amountItem, str}) {
     const [input, setInput] = useState('')
     return (
         <main>
             <Search setInput={setInput}/>
-            <List str={str} amountItem={amountItem} input={input}/>
+            <List refData={refData} str={str} amountItem={amountItem} input={input}/>
         </main>
     )
 }
