@@ -13,6 +13,9 @@ function App() {
     const [firstPages, setFirstPages] = useState(0)
     const [lastPages, setLastPages] = useState(amountItem)
     const [str, setStr] = useState('1')
+    const [pageNav, setPageNav] = useState({})
+
+
 
     function refData() {
         return data.map((el) => {
@@ -25,12 +28,11 @@ function App() {
             };
         });
     }
-
     return (
         <>
             <Header/>
             <Main input={input} setInput={setInput} refData={refData} amountItem={amountItem} firstPages={firstPages} lastPages={lastPages} str={str}/>
-            <Footer refData={refData} setFirstPages={setFirstPages} setLastPages={setLastPages} setStr={setStr} amountItem={amountItem}
+            <Footer setPageNav={setPageNav} refData={refData} setFirstPages={setFirstPages} setLastPages={setLastPages} setStr={setStr} amountItem={amountItem}
                     setAmountItem={setAmountItem}/>
         </>
     );
