@@ -34,19 +34,22 @@ function App() {
 
     /*=============Отрисовка Card в List==*/
     function listCard () {
+        let searchInputData =  refData()
+            .filter(el => el.title.includes(input.trim().toLowerCase()) || el.keywords.includes(input.trim().toLowerCase()))
+            .map(el => <Card key={id()} {...el}/>)
+
+       let sliceCard = searchInputData.slice((+str * amountItem - amountItem), ((+str * amountItem - amountItem) + amountItem))
+
+
         return (
             <>
-                {refData().filter(el => el.title.includes(input.trim().toLowerCase()) || el.keywords.includes(input.trim().toLowerCase())).map(el => <Card key={id()} {...el}/>)}
+                {
+                    sliceCard
+                   }
             </>
         )
     }
-/*===============================*/
-    {/*   { refData()
-                        .slice((+str * amountItem - amountItem), ((+str * amountItem - amountItem) + amountItem))
-                        .filter(el => el.title.includes(input.trim().toLowerCase()) || el.keywords.includes(input.trim().toLowerCase())).map(el =>
-                            <Card key={id()} {...el} />)
-                    }*/}
-/*===============================*/
+
  function pagination() {
      return (
          <>
@@ -62,15 +65,10 @@ function App() {
          </>)
 
  }
-pagination()
-
-
-
-
-
 
     return (
-        <>
+        <><Footer pagination={pagination} setPageNav={setPageNav} refData={refData} setFirstPages={setFirstPages} setLastPages={setLastPages} setStr={setStr} amountItem={amountItem}
+                  setAmountItem={setAmountItem}/>
             <Header/>
             <Main listCard={listCard} input={input} setInput={setInput} refData={refData} amountItem={amountItem} firstPages={firstPages} lastPages={lastPages} str={str}/>
             <Footer pagination={pagination} setPageNav={setPageNav} refData={refData} setFirstPages={setFirstPages} setLastPages={setLastPages} setStr={setStr} amountItem={amountItem}
