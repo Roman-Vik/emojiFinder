@@ -1,12 +1,13 @@
 import s from "./pages.module.css"
 import React from "react";
 
-export function Pages({ pagination}) {
+export function Pages({ setStr,pagination}) {
+
     return (
         <ul className={s.list}>
-            <li onClick={() =>  {
-            } }>first</li>
-            {pagination()}
+            <li >first</li>
+
+            <li >Last</li>
         </ul>
     )
 }

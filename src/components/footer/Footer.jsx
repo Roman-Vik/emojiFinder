@@ -7,7 +7,7 @@ export function Footer({ pagination, setPageNav ,refData, setLastPages, setFirst
     return (
         <footer>
             <div className={s.container}>
-                <Pages pagination={pagination}/>
+                <Pages setStr={setStr} pagination={pagination}/>
                 <Select amountItem={amountItem} setAmountItem={setAmountItem}/>
             </div>
         </footer>
