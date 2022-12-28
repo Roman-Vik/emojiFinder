@@ -5,17 +5,16 @@ import {Main} from "./components/main/Main";
 import {Footer} from "./components/footer/Footer";
 import {data} from "./store/data";
 
-
 function App() {
     const [refData, setRefData] = useState(data)
     const [filterCards, setFilterCards] = useState(refData)
-
     //select
     const [amountItem, setAmountItem] = useState(12)
     const [firstPages, setFirstPages] = useState(0)
     const [lastPages, setLastPages] = useState(amountItem)
     const [str, setStr] = useState(1)
     const [pageNav, setPageNav] = useState(1)
+
 
 
     useEffect(() => {
@@ -31,7 +30,7 @@ function App() {
 
     /*===========Фильтр карт по инпуту===============*/
     const filterCard = (event) =>  {
-console.log(refData)
+
        let filterCards =  refData.filter(el => el.title.includes(event.target.value.trim().toLowerCase()) || el.keywords.includes(event.target.value.trim().toLowerCase()))
         console.log(filterCards)
         setFilterCards( filterCards )

@@ -1,7 +1,9 @@
 import s from "./pages.module.css"
 import React from "react";
+import {v4 as id} from 'uuid';
 
-export function Pages({ setStr,pagination}) {
+export function Pages() {
+
 
     return (
         <ul className={s.list}>

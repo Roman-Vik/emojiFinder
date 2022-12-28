@@ -1,4 +1,5 @@
 import s from './select.module.css'
+
 import React from "react";
 
 export function Select({setAmountItem, amountItem}) {
