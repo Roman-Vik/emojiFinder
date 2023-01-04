@@ -12,8 +12,12 @@ function App() {
     const [filterCards, setFilterCards] = useState(refData)
     //select числа
     const [amountItem, setAmountItem] = useState(12)
+
     const [page, setPage] = useState(1)
+    const [lastPage, setLastPage] = useState(0)
+
     console.log(page)
+
 
     useEffect(() => {
         let refactorListCard = refData.map((el) => ({
@@ -40,9 +44,20 @@ function App() {
     //Кол-во страниц
     const pagesList = Math.ceil(filterCards.length / amountItem)
     /*======================= PAGES MAIN end===================================*/
+
+
+    /*======================= PAGES FOOTER===================================*/
+
+
+
+
+    /*======================= PAGES FOOTER end===================================*/
     return (
         <>
             <Footer
+                lastPage={lastPage}
+                page={page}
+                setLastPage={setLastPage}
                 amountItem={amountItem}
                 setAmountItem={setAmountItem}
                 pagesList={pagesList}
