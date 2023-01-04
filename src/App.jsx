@@ -33,18 +33,14 @@ function App() {
         return filterCards
     }
 
-//первая страница для slice
-    const firstIndexPage = filterCards.length - (filterCards.length - 1)
-// последняя страница для slice
-    const lastIndexPages = firstIndexPage + amountItem
-//Кол-во страниц
-    const pagesList = Math.ceil(filterCards.length / amountItem)
 
     /*======================= PAGES===================================*/
     //с какой страницы отриссоввываются карты
-    const startPage = page - 1
+    const startPage = page * amountItem - amountItem
     //по какую страницу отриссоввываются карты
-    const endPage = startPage + amountItem
+    const endPage = page * amountItem
+    //Кол-во страниц
+    const pagesList = Math.ceil(filterCards.length / amountItem)
 
     /*======================= PAGES end===================================*/
     return (
