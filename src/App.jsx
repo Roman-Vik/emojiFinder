@@ -6,14 +6,13 @@ import {Footer} from "./components/footer/Footer";
 import {data} from "./store/data";
 
 function App() {
+    // Фильтр data
     const [refData, setRefData] = useState(data)
+    //  Фильтр data по инпуту
     const [filterCards, setFilterCards] = useState(refData)
-    //select
+    //select числа
     const [amountItem, setAmountItem] = useState(12)
-    const [firstPages, setFirstPages] = useState(0)
-    const [lastPages, setLastPages] = useState(amountItem)
-    const [str, setStr] = useState(1)
-    const [pageNav, setPageNav] = useState(1)
+    const [listPages, setListPages] = useState([])
 
 
     useEffect(() => {
@@ -31,18 +30,19 @@ function App() {
     const filterCard = (event) => {
         const filterCards = refData.filter(el => el.title.includes(event.target.value.trim().toLowerCase()) || el.keywords.includes(event.target.value.trim().toLowerCase()))
         setFilterCards(filterCards)
-
         return filterCards
     }
 
-//первый элемент на странице
-    const firstIndexPage = 0
-//последний элемент
-    const lastIndexPages = filterCards.length
+
+//первая страница для slice
+    const firstIndexPage = filterCards.length - (filterCards.length -1)
+    console.log(firstIndexPage)
+// последняя страница для slice
+    const lastIndexPages = firstIndexPage + amountItem
 //Кол-во страниц
-    const pagesList = Math.ceil(lastIndexPages / amountItem)
-//Вырезать с первой страницы по select
-    const pagesSliceInSelect = firstIndexPage + (firstIndexPage + amountItem)
+    const pagesList = Math.ceil(filterCards.length / amountItem)
+// изменяющийся список страниц
+
 
 
     // function pagination() {
@@ -63,18 +63,20 @@ function App() {
 
     return (
         <>
-            <Footer filterCards={filterCards}
-                    amountItem={amountItem}
-                    setAmountItem={setAmountItem}/>
+            <Footer
+                amountItem={amountItem}
+                setAmountItem={setAmountItem}
+                pagesList={pagesList}
+            />
             <Header/>
             <Main filterCard={filterCard}
                   refData={filterCards}
-                  amountItem={amountItem}
-                  firstPages={firstPages}
-                  str={str}/>
-            <Footer filterCards={filterCards}
+            />
+            <Footer
                     amountItem={amountItem}
-                    setAmountItem={setAmountItem}/>
+                    setAmountItem={setAmountItem}
+                    pagesList={pagesList}
+            />
         </>
     );
 }
