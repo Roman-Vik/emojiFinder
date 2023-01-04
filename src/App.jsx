@@ -32,17 +32,14 @@ function App() {
         setFilterCards(filterCards)
         return filterCards
     }
-
-
-    /*======================= PAGES===================================*/
+    /*======================= PAGES MAIN===================================*/
     //с какой страницы отриссоввываются карты
     const startPage = page * amountItem - amountItem
     //по какую страницу отриссоввываются карты
     const endPage = page * amountItem
     //Кол-во страниц
     const pagesList = Math.ceil(filterCards.length / amountItem)
-
-    /*======================= PAGES end===================================*/
+    /*======================= PAGES MAIN end===================================*/
     return (
         <>
             <Footer

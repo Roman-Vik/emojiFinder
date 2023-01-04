@@ -9,6 +9,8 @@ export function Pages({pagesList, setPage}) {
         changingListOfPages.push(i)
     }
 
+
+
     return (
         <ul className={s.list}>
             <li >first</li>
