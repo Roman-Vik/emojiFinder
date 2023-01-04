@@ -12,8 +12,8 @@ function App() {
     const [filterCards, setFilterCards] = useState(refData)
     //select числа
     const [amountItem, setAmountItem] = useState(12)
-    const [listPages, setListPages] = useState([])
-
+    const [page, setPage] = useState(1)
+    console.log(page)
 
     useEffect(() => {
         let refactorListCard = refData.map((el) => ({
@@ -33,16 +33,12 @@ function App() {
         return filterCards
     }
 
-
 //первая страница для slice
-    const firstIndexPage = filterCards.length - (filterCards.length -1)
-    console.log(firstIndexPage)
+    const firstIndexPage = filterCards.length - (filterCards.length - 1)
 // последняя страница для slice
     const lastIndexPages = firstIndexPage + amountItem
 //Кол-во страниц
     const pagesList = Math.ceil(filterCards.length / amountItem)
-// изменяющийся список страниц
-
 
 
     // function pagination() {
@@ -67,16 +63,17 @@ function App() {
                 amountItem={amountItem}
                 setAmountItem={setAmountItem}
                 pagesList={pagesList}
+                setPage={setPage}
             />
             <Header/>
             <Main filterCard={filterCard}
                   refData={filterCards}
             />
-            <Footer
-                    amountItem={amountItem}
-                    setAmountItem={setAmountItem}
-                    pagesList={pagesList}
-            />
+            {/*<Footer*/}
+            {/*        amountItem={amountItem}*/}
+            {/*        setAmountItem={setAmountItem}*/}
+            {/*        pagesList={pagesList}*/}
+            {/*/>*/}
         </>
     );
 }
