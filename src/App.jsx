@@ -16,9 +16,8 @@ function App() {
     const [pageNav, setPageNav] = useState(1)
 
 
-
     useEffect(() => {
-        let refactorListCard =  refData.map((el) => ({
+        let refactorListCard = refData.map((el) => ({
             ...el,
             keywords: el.keywords
                 .split(' ')
@@ -29,45 +28,52 @@ function App() {
     }, []);
 
     /*===========Фильтр карт по инпуту===============*/
-    const filterCard = (event) =>  {
+    const filterCard = (event) => {
+        const filterCards = refData.filter(el => el.title.includes(event.target.value.trim().toLowerCase()) || el.keywords.includes(event.target.value.trim().toLowerCase()))
+        setFilterCards(filterCards)
 
-       let filterCards =  refData.filter(el => el.title.includes(event.target.value.trim().toLowerCase()) || el.keywords.includes(event.target.value.trim().toLowerCase()))
-        console.log(filterCards)
-        setFilterCards( filterCards )
-
+        return filterCards
     }
 
+//первый элемент на странице
+    const firstIndexPage = 0
+//последний элемент
+    const lastIndexPages = filterCards.length
+//Кол-во страниц
+    const pagesList = Math.ceil(lastIndexPages / amountItem)
+//Вырезать с первой страницы по select
+    const pagesSliceInSelect = firstIndexPage + (firstIndexPage + amountItem)
 
 
-
- // function pagination() {
- //     return (
- //         <>
- //             {
- //                 refData().filter((el, index, arr) => index <= (arr.length / (amountItem * 12) )).map((el, i) => <li
- //                     onClick={(e) => {
- //                         setStr(e.target.valueOf().innerText)
- //                         setFirstPages(i * amountItem)
- //                         setLastPages((i * amountItem) + amountItem)
- //                     }}
- //                     key={id()}>{i + 1}</li>)
- //             }
- //         </>)
- // }
-
-
+    // function pagination() {
+    //     return (
+    //         <>
+    //             {
+    //                 refData().filter((el, index, arr) => index <= (arr.length / (amountItem * 12) )).map((el, i) => <li
+    //                     onClick={(e) => {
+    //                         setStr(e.target.valueOf().innerText)
+    //                         setFirstPages(i * amountItem)
+    //                         setLastPages((i * amountItem) + amountItem)
+    //                     }}
+    //                     key={id()}>{i + 1}</li>)
+    //             }
+    //         </>)
+    // }
 
 
     return (
-        <><Footer setPageNav={setPageNav} refData={refData} setFirstPages={setFirstPages} setLastPages={setLastPages} setStr={setStr} amountItem={amountItem}
-                  setAmountItem={setAmountItem}/>
+        <>
+            <Footer filterCards={filterCards}
+                    amountItem={amountItem}
+                    setAmountItem={setAmountItem}/>
             <Header/>
-            <Main  filterCard={filterCard}  refData={filterCards} amountItem={amountItem} firstPages={firstPages} lastPages={lastPages} str={str}/>
-            <Footer
-                    setPageNav={setPageNav}
-                    refData={refData}
-                    setFirstPages={setFirstPages}
-                    setLastPages={setLastPages} setStr={setStr} amountItem={amountItem}
+            <Main filterCard={filterCard}
+                  refData={filterCards}
+                  amountItem={amountItem}
+                  firstPages={firstPages}
+                  str={str}/>
+            <Footer filterCards={filterCards}
+                    amountItem={amountItem}
                     setAmountItem={setAmountItem}/>
         </>
     );

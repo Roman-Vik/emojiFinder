@@ -3,11 +3,11 @@ import s from './footer.module.css'
 import {Select} from "../select/Select";
 import {Pages} from "../pages/Pages";
 
-export function Footer({ pagination,   setStr, amountItem, setAmountItem}) {
+export function Footer({amountItem, setAmountItem, filterCards}) {
     return (
         <footer>
             <div className={s.container}>
-                <Pages  setStr={setStr} pagination={pagination}/>
+                <Pages filterCards={filterCards} />
                 <Select  amountItem={amountItem} setAmountItem={setAmountItem}/>
             </div>
         </footer>
