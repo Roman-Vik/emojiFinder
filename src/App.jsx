@@ -40,23 +40,13 @@ function App() {
 //Кол-во страниц
     const pagesList = Math.ceil(filterCards.length / amountItem)
 
+    /*======================= PAGES===================================*/
+    //с какой страницы отриссоввываются карты
+    const startPage = page - 1
+    //по какую страницу отриссоввываются карты
+    const endPage = startPage + amountItem
 
-    // function pagination() {
-    //     return (
-    //         <>
-    //             {
-    //                 refData().filter((el, index, arr) => index <= (arr.length / (amountItem * 12) )).map((el, i) => <li
-    //                     onClick={(e) => {
-    //                         setStr(e.target.valueOf().innerText)
-    //                         setFirstPages(i * amountItem)
-    //                         setLastPages((i * amountItem) + amountItem)
-    //                     }}
-    //                     key={id()}>{i + 1}</li>)
-    //             }
-    //         </>)
-    // }
-
-
+    /*======================= PAGES end===================================*/
     return (
         <>
             <Footer
@@ -66,14 +56,11 @@ function App() {
                 setPage={setPage}
             />
             <Header/>
-            <Main filterCard={filterCard}
+            <Main startPage={startPage}
+                  endPage={endPage}
+                  filterCard={filterCard}
                   refData={filterCards}
             />
-            {/*<Footer*/}
-            {/*        amountItem={amountItem}*/}
-            {/*        setAmountItem={setAmountItem}*/}
-            {/*        pagesList={pagesList}*/}
-            {/*/>*/}
         </>
     );
 }

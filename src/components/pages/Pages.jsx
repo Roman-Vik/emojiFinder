@@ -12,7 +12,7 @@ export function Pages({pagesList, setPage}) {
     return (
         <ul className={s.list}>
             <li >first</li>
-            {changingListOfPages.map(el=> <li onClick={ event => setPage(event.target.valueOf().innerHTML)} key={id()}>{el}</li>)}
+            {changingListOfPages.map((el, i)=> <li onClick={ event => setPage(event.target.valueOf().innerHTML)} key={id()}>{i + 1}</li>)}
             <li >Last</li>
         </ul>
     )
