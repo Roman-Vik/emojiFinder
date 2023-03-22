@@ -1,7 +1,6 @@
 import React from "react";
 import s from './card.module.css'
 
-
 export  function Card(el) {
 const {title,symbol, keywords } = el
     return (
